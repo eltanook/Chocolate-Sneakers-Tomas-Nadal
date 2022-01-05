@@ -1,10 +1,10 @@
-import Nav from './Components/NavBar';
-
 const Footer = () => {
     return (
-        <footer>
-            <p>Copyright &copy; 2021 - Tomas Nadal </p>
-        </footer>
+        <div className="footer">
+            <footer>
+                <p>Copyright &copy; 2021 - Tomás Nadal </p>
+            </footer>
+        </div>
     )
 }
 
