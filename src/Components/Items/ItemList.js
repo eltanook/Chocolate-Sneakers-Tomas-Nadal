@@ -1,21 +1,14 @@
-//import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
-function ItemList ({product}) {
-        const {title, price, image} = product
-    
+
+function ItemList ({product}) {    
     return (
-        <div className="item-box">
-		        <div className="item">                    
-                    <div className="card">
-                        <img className="item-img" src={image} alt={title}></img>
-                        <div class="item-content">
-                            {title}  
-                            <p>{price}</p>
-                            <button>Ver detalles</button>
-                        </div>
-                    </div>                   
-                </div>
-        </div>
+        <div className= "itemBox">
+            <img src={product.image} alt={product.title}/>
+            <h4>{product.title}</h4>
+            <p>${product.price}</p>
+            <Link id="Button" to={"/item/"+product.id}>Ver detalles</Link>
+         </div>
     )
 }
 

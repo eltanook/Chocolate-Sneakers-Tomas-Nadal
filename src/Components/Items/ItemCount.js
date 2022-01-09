@@ -17,16 +17,15 @@ const ItemCount = ({stock, initial, onAdd}) => {
         }
     }
 
-    const resetearContador = () =>{
-        setContador(initial)
-    }
-
     return (
-        <div id="contador">
+        <div>
             <button onClick={disminuirContador}>-</button>
-            <p id="cantidad-contador"> {contador} </p>
+
+            <p> {contador} </p>
+
             <button onClick={aumentarContador}>+</button>
-            <button onClick={resetearContador} id="confirmar-contador">Confirmar</button>
+
+            <button  onClick={() =>onAdd(contador)}>Add to cart</button>
         </div>
     )
 }

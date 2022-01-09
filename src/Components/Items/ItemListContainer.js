@@ -1,39 +1,43 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
+import ItemLoader from './ItemLoader';
 
 
-const ItemListContainer = ({name}) => {
+const ItemListContainer = () => {
 
         const [products, setProducts] = useState([])
         const [loading, setLoading] = useState(true)
+        const {id} = useParams()
+        const name = "Pirulo"
 
         useEffect(() => {
-            const promise = fetch ('https://fakestoreapi.com/products')
+            const url = id ? `https://fakestoreapi.com/products/category/${id}` : "https://fakestoreapi.com/products/";
+            const getCollection = fetch (url);
 
-            promise
+            getCollection
             .then(res=>res.json())
             .then((products) => {
                 setLoading(false);
                 setProducts(products);
+            })
+            .catch((err)=> {
+                console.error(err)
             });
-        }, []);
-
-//const onAdd = () =>{ } 
+        }, [id]);
 
         return (
             <>
             <p className="greeting">¡Bienvenido {name}!</p>
-            <h2>Los más vendidos :</h2>
+            <h2>Los más vendidos:</h2>
             <div id="projects">
-                {loading?( <h3>Cargando...</h3> ) 
-                : (
-                    products.map((product) => (
+                {loading ? <ItemLoader/> : 
+                ( products.map((product) => (
                         <div>
                             <ItemList key={products.id} product={product}/>
                         </div>
-                        ))
-                    )}
+                    ))
+                )}
             </div>
             </>
         ) 

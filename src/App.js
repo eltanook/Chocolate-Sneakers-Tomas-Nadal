@@ -1,20 +1,17 @@
 import Header from './Header';
 import Footer from './Footer';
-import ItemListContainer from './Components/Items/ItemListContainer';
-import ItemDetailContainer from './Components/Items/ItemDetailContainer';
-//import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
+import Main from './Main';
+
 
 function App (titulo) {
     
     return (
-       <> 
-        <div className="container">
+       <BrowserRouter> 
             <Header titulo={titulo}/>
-            <ItemListContainer name="pirulo"/>
-            <ItemDetailContainer/>
+            <Main/>
             <Footer/>
-        </div>
-       </>
+       </BrowserRouter>
     )  
 }
 

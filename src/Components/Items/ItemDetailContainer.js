@@ -1,67 +1,42 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail';
+import { useParams } from 'react-router-dom';
+import ItemLoader from './ItemLoader';
 
-const productList = [
-    {
-        id: 1,
-        model: "Yeezy Boost 350",
-        price: "250$",
-        img: "https://cdnx.jumpseller.com/premier-sneakers/image/11499461/resize/255/255?1601000143",
-        brand: "Nike",
-    },
-    {
-        id: 2,
-        model: "Airforce 1",
-        price: "70$",
-        img: "https://urbankingstore.com/714-large_default/nike-air-force-one-marrones-ante.jpg",
-        brand: "Nike",
-    },
-    {
-        id: 3,
-        model: "Jordan 1",
-        price: "300$",
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM0UOlvCMe5aI-2fQu4_UXcN4KXu6dPyUorAEI4Ig3GoZ6eGWEKu9NYBUPAuLn_epB3IY&usqp=CAU",
-        brand: "Nike",
-    },
-];
 
 const ItemDetailContainer = () => {
 
-    const [products, setProducts] = useState([])
+    const [product, setProducts] = useState({})
     const [loading, setLoading] = useState(true)
-    const id = 3;
+    const [added, setAdded] = useState(false)
+    const {id} = useParams()
 
     useEffect(() => {
-        const getItem = productList.filter((product)=>{
-            return product.id === +id
-        });
-        const promise = new Promise ((res , rej) => {
-            setTimeout(() => {
-                res(getItem);
-            }, 2000);
-        });
-        promise.then((products) => {
+        const getProducts = fetch (`https://fakestoreapi.com/products/${id}`)
+        getProducts
+        .then(res=>res.json())
+        .then((product) => {
             setLoading(false);
-            setProducts(products);
+            setProducts(product);
+        })
+        .catch((err)=> {
+            console.error(err)
         });
     }, [id]);
 
-        return (
-            <>
-            <p className="greeting">Detalles del producto</p>
-            <div id="projects">
-                {loading?( <h3>Cargando...</h3> ) 
-            : (
-                products.map((product) => (
-                    <div>
-                        <ItemDetail key={products.id} product={product}/>
-                    </div>
-                    ))
-                )}
-            </div>
-            </>
-        ) 
+const onAdd = (count) => {
+    console.log(`Agregaste ${count} ${product.title} al carrito.`)
+    setAdded(true);
+}
+
+    return (
+        <>
+        <p className="greeting">Detalles del producto</p>
+        <div id="projects">
+            {loading ? <ItemLoader/>  : <ItemDetail product={product} onAdd={onAdd} added={added}/>}
+        </div>
+        </>
+    ) 
 }
 
 export default ItemDetailContainer

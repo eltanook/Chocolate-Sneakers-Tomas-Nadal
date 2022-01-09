@@ -1,16 +1,16 @@
-import Nav from './Components/Navbar/NavBar';
+import NavBar from './Components/Navbar/NavBar';
 
 
 function Header () {
 
-const titulo = "Chocolate Sneakers"
+    const titulo = "Chocolate Sneakers"
 
     return (
-        <div className="barranav">
+        <div className="header">
             <header>
                <h1>{titulo}</h1> 
             </header>
-            <Nav/>
+            <NavBar/>
         </div>
     )  
 }

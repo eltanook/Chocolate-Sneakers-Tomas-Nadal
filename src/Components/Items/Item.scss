@@ -1,0 +1,125 @@
+
+#projects {
+    display: flex;
+    padding: 1rem 0 4rem 0;
+    flex-wrap: wrap;
+    justify-content: auto;
+    margin: 0px 30px 0px 30px;
+}
+
+.itemBox{
+    display: inline-flex;
+    position: relative;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 370px;
+    padding: 0;
+    color:rgb(110, 70, 40);
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    border-radius: 10px 10px 10px 10px;
+    border: 5px solid rgb(120, 80, 45);
+}
+
+.itemBox:hover{
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.itemBox h4{
+    width: 250px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+.itemBox p {
+    width: 100%;
+    text-align: center;
+}
+
+.itemBox #Button {
+    padding: 0px 20px;
+    margin: 10px;
+    height: 35px;
+    border: 2px solid rgb(110, 70, 40);
+    color: rgb(110, 70, 40);
+    text-decoration: none;
+    border-radius:5px 5px 5px 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.itemBox img {
+    border-radius:5px 5px 5px 5px;
+    width: auto;
+    max-width: 290px;
+    height: 200px;
+    padding: 10px;
+}
+
+.itemBox2{
+    padding: 3rem 0rem 3rem 0rem;
+    width: 90%;
+    flex-wrap: nowrap;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.itemBox2 img {
+    width: 400px;
+    height: 500px;
+    border: 5px solid rgb(120, 80, 45);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    margin: 10px 10px 10px 50px;
+}
+
+.itemBox2 div{
+    margin-left: 100px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.itemBox2 h3 {
+    color: rgb(110, 70, 40);
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+}
+
+.itemBox2 h4{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    width: 100%;
+}
+
+#contador{
+    width: 70%;
+    display: inline-flex;
+    align-items: center;
+}
+
+#contador button{
+    padding: 0px 14px 0px 14px;
+    height: 40px;    
+    background-color: rgb(120, 80, 45);
+    color: rgb(255, 247, 234);
+}
+
+#contador button:hover{ 
+    background-color: rgb(110, 70, 40);
+}
+
+#contador p{
+    font-weight: bold;
+    padding: 5px 20px 0px 20px;
+    text-decoration: none;
+    color: rgb(110, 70, 40);
+}
+
+#go-to-cart {
+    margin: auto;
+}
