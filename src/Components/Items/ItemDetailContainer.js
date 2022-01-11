@@ -33,7 +33,7 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            <p className="subtitle">Detalles del producto</p>
+            <p className="subtitle">Product details</p>
             
             <div id="projects">
                 {loading ? <ItemLoader/>  : <ItemDetail product={product} onAdd={onAdd} added={added}/>}
