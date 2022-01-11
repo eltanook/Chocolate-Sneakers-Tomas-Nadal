@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 import ItemLoader from './ItemLoader';
+import ItemUpdates from './ItemUpdates';
 
 
 const ItemListContainer = () => {
@@ -12,6 +13,7 @@ const ItemListContainer = () => {
         const name = "Pirulo"
 
         useEffect(() => {
+
             const url = id ? `https://fakestoreapi.com/products/category/${id}` : "https://fakestoreapi.com/products/";
             const getCollection = fetch (url);
 
@@ -20,25 +22,29 @@ const ItemListContainer = () => {
             .then((products) => {
                 setLoading(false);
                 setProducts(products);
-            })
-            .catch((err)=> {
+            }).catch((err)=> {
                 console.error(err)
             });
+
         }, [id]);
 
         return (
             <>
-            <p className="greeting">¡Bienvenido {name}!</p>
-            <h2>Los más vendidos:</h2>
-            <div id="projects">
-                {loading ? <ItemLoader/> : 
-                ( products.map((product) => (
-                        <div>
-                            <ItemList key={products.id} product={product}/>
-                        </div>
-                    ))
-                )}
-            </div>
+                <p className="subtitle">¡Welcome back {name}!</p>
+
+                <h2>Our products:</h2>
+                
+                <div id="projects">
+                    {loading ? <ItemLoader/> : 
+                    ( products.map((product) => (
+                            <div>
+                                <ItemList key={products.id} product={product}/>
+                            </div>
+                        ))
+                    )}
+                </div>
+                {loading ? "" : <ItemUpdates/>}
+                
             </>
         ) 
 } 

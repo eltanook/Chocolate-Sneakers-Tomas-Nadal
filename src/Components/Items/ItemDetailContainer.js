@@ -12,30 +12,33 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
 
     useEffect(() => {
-        const getProducts = fetch (`https://fakestoreapi.com/products/${id}`)
+        
+        const getProducts = fetch (`https://fakestoreapi.com/products/${id}`);
+
         getProducts
         .then(res=>res.json())
         .then((product) => {
             setLoading(false);
             setProducts(product);
-        })
-        .catch((err)=> {
+        }).catch((err)=> {
             console.error(err)
         });
+
     }, [id]);
 
-const onAdd = (count) => {
+    const onAdd = (count) => {
     console.log(`Agregaste ${count} ${product.title} al carrito.`)
     setAdded(true);
-}
+    }
 
     return (
         <>
-        <p className="greeting">Detalles del producto</p>
-        <div id="projects">
-            {loading ? <ItemLoader/>  : <ItemDetail product={product} onAdd={onAdd} added={added}/>}
-        </div>
-        </>
+            <p className="subtitle">Detalles del producto</p>
+            
+            <div id="projects">
+                {loading ? <ItemLoader/>  : <ItemDetail product={product} onAdd={onAdd} added={added}/>}
+            </div>
+         </>
     ) 
 }
 

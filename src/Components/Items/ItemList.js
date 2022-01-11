@@ -7,7 +7,7 @@ function ItemList ({product}) {
             <img src={product.image} alt={product.title}/>
             <h4>{product.title}</h4>
             <p>${product.price}</p>
-            <Link id="Button" to={"/item/"+product.id}>Ver detalles</Link>
+            <Link id="Button" to={"/item/"+product.id}>Details</Link>
          </div>
     )
 }

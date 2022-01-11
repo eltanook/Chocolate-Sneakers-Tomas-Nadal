@@ -4,14 +4,14 @@ import {BrowserRouter} from "react-router-dom";
 import Main from './Main';
 
 
-function App (titulo) {
+function App (title) {
     
     return (
-       <BrowserRouter> 
-            <Header titulo={titulo}/>
-            <Main/>
-            <Footer/>
-       </BrowserRouter>
+            <BrowserRouter> 
+                    <Header title={title}/>
+                    <Main/>
+                    <Footer/>
+            </BrowserRouter>  
     )  
 }
 
