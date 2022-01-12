@@ -121,8 +121,9 @@
     color: rgb(110, 70, 40);
 }
 
-#go-to-cart {
-    margin: auto;
+#gotocart{
+    text-decoration: none;
+    color: rgb(110, 70, 40);
 }
 
 #membership{
@@ -169,7 +170,7 @@
 .input-group input {
     height: 50px;
     border: 3px solid rgb(120, 80, 45);
-        padding-left: 15px;
+    padding-left: 15px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     display: table-cell;
 }

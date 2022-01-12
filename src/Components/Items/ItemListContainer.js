@@ -10,7 +10,7 @@ const ItemListContainer = () => {
         const [products, setProducts] = useState([])
         const [loading, setLoading] = useState(true)
         const {id} = useParams()
-        const name = "Pirulo"
+        const name = "Sergio"
 
         useEffect(() => {
 
@@ -30,7 +30,7 @@ const ItemListContainer = () => {
 
         return (
             <>
-                <p className="subtitle">¡Welcome back {name}!</p>
+                <p className="subtitle">Welcome back {name}!</p>
 
                 <h2>Our products:</h2>
                 

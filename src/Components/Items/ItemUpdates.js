@@ -10,7 +10,7 @@ const ItemUpdates = () => {
                     <div className="input-group">
                         <form action="#" className="w-100"> 
                             <input type="email" className="form-control" name="email" placeholder="Email Address Here..." required/>
-                            <button class="btn btn-main btn-submit" type="submit">Become a member</button>
+                            <button className="btn btn-main btn-submit" type="submit">Become a member</button>
                         </form>
                     </div>
                 </div>

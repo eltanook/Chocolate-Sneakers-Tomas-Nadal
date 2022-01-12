@@ -15,7 +15,9 @@ function ItemDetail ({product, onAdd, added}) {
                 <p>{product.description}</p>
                 <h4>${product.price}</h4>
                 <div id="contador">
-                    {added ? <Link id="go-to-cart" to='/cart'><button className="btn btn-main btn-submit">Go to cart</button></Link> : <ItemCount stock ={5} initial={1} onAdd={onAdd}/>}
+                    {added ? 
+                    <h3><Link id="gotocart" to={"/cart"}>Go to cart</Link></h3> : 
+                    <ItemCount stock ={5} initial={1} onAdd={onAdd}/>}
                 </div>
             </div>   
             

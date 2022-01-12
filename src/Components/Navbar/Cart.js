@@ -3,21 +3,16 @@
 
 
 const Cart = () => {
-    
-//    const {cart, total_price, total_quantity} = useContext(contexto)
-    
+
     return (
 
         <div>
-
             <p className="subtitle">Cart</p>
-
-            <h3>AQUÍ VA A IR EL CONTENIDO DEL COMPONENTE CART</h3>
-
+            <h3>Here are your selected products:</h3>
 
             <ul id="productos-cart"> 
-                <li>Quantity: {/*total_quantity*/}</li>   
-                <li>Total price: {/*total_price*/}</li>
+                <li>Quantity: {/*quantity*/}</li>   
+                <li>Total price: {/*price*/}</li>
             </ul>
         </div>
     )

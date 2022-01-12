@@ -7,11 +7,11 @@ import Main from './Main';
 function App (title) {
     
     return (
-            <BrowserRouter> 
-                    <Header title={title}/>
-                    <Main/>
-                    <Footer/>
-            </BrowserRouter>  
+        <BrowserRouter>  
+                <Header title={title}/>
+                <Main/>
+                <Footer/>
+        </BrowserRouter>  
     )  
 }
 

@@ -27,8 +27,8 @@ const ItemDetailContainer = () => {
     }, [id]);
 
     const onAdd = (count) => {
+    setAdded(true);  
     console.log(`Agregaste ${count} ${product.title} al carrito.`)
-    setAdded(true);
     }
 
     return (
