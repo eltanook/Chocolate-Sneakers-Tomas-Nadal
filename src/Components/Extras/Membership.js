@@ -1,4 +1,4 @@
-const ItemUpdates = () => {
+const Membership = () => {
     return (
         
     <section id="membership">
@@ -8,9 +8,12 @@ const ItemUpdates = () => {
                     <h2>Get Product Updates</h2>
                     <p className="text-white">Become a member of our community and recieve all our news.</p>
                     <div className="input-group">
-                        <form action="#" className="w-100"> 
+                        <form action="#" className="w-100">
+
                             <input type="email" className="form-control" name="email" placeholder="Email Address Here..." required/>
-                            <button className="btn btn-main btn-submit" type="submit">Become a member</button>
+                            
+                            <button className="btn btn-main btn-submit" type="submit" onClick={() => {alert("Welcome to the Chocolate Club. Now you will be receiving all our news about early releases, discounts, and much more !!! : ) ")}}>Become a member</button>
+                            
                         </form>
                     </div>
                 </div>
@@ -21,4 +24,4 @@ const ItemUpdates = () => {
     )
 }
 
-export default ItemUpdates
+export default Membership

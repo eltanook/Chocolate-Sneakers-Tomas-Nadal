@@ -25,6 +25,7 @@ html , body {
     color: rgb(255, 247, 234);
     text-shadow: 2px 2px 3px rgb(0, 0, 0);
     font-family: 'Smooch', cursive;
+    text-decoration: none;
 } 
 
 #navbar a{
@@ -35,8 +36,17 @@ html , body {
     display: inline-flex;   
 }
 
-#selector-categorias a{
+#ourproducts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#ourproducts a{
     color: rgb(110, 70, 40);
+    text-decoration: none;
+    margin-top: 0.5rem;
 }
 
 #registrarse{

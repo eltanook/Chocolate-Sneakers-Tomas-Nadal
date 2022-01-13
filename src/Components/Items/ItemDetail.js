@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
 
 
@@ -16,7 +15,7 @@ function ItemDetail ({product, onAdd, added}) {
                 <h4>${product.price}</h4>
                 <div id="contador">
                     {added ? 
-                    <h3><Link id="gotocart" to={"/cart"}>Go to cart</Link></h3> : 
+                    <h3>Succesfully added to cart!</h3> : 
                     <ItemCount stock ={5} initial={1} onAdd={onAdd}/>}
                 </div>
             </div>   

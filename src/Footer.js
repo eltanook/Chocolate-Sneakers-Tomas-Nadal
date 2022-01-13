@@ -5,7 +5,7 @@ const Footer = ({titulo}) => {
                 <div className="row">
                 {/* primera columna */}
                 <div className="col">
-                    <h4 id="brand">Chocolate Sneakers ®</h4>
+                    <a id="brand" href="/#"><h4>Chocolate Sneakers</h4></a>
                     <ul className="list-unstyled">
                     <li>Gmail: chocolate.sneakers@gmail.com</li>
                     <li>Instagram: @choc.sneakers</li>
@@ -27,7 +27,7 @@ const Footer = ({titulo}) => {
                     <ul className="list-unstyled">
                     <li>Monday-Friday: 8:00 - 20:00</li>
                     <li>Saturday: 12:00 - 19:00</li>
-                    <li>Sunday: closed :(</li>
+                    <li>Sunday: closed</li>
                     </ul>
                 </div>
                 </div>

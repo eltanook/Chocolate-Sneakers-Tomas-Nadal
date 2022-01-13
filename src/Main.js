@@ -2,6 +2,7 @@ import ItemDetailContainer from "./Components/Items/ItemDetailContainer"
 import ItemListContainer from "./Components/Items/ItemListContainer"
 import {Routes, Route} from "react-router-dom";
 import "./Components/Items/Item.scss";
+import "./Components/Extras/Extras.scss";
 import Cart from "./Components/Navbar/Cart";
 
 

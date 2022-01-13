@@ -1,9 +1,10 @@
 import { useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import ItemList from './ItemList';
 import ItemLoader from './ItemLoader';
-import ItemUpdates from './ItemUpdates';
-
+import Membership from '../Extras/Membership';
+import ItemCategories from './ItemCategories';
+import Carousel from '../Extras/Carousel';
 
 const ItemListContainer = () => {
 
@@ -31,8 +32,16 @@ const ItemListContainer = () => {
         return (
             <>
                 <p className="subtitle">Welcome back {name}!</p>
-
-                <h2>Our products:</h2>
+                
+                {loading ? "" : 
+                <>
+                <Carousel/>
+                <h2 id='ourproducts'>      
+                <ItemCategories/>
+                Our products:
+                </h2>
+                </>}
+                
                 
                 <div id="projects">
                     {loading ? <ItemLoader/> : 
@@ -43,7 +52,7 @@ const ItemListContainer = () => {
                         ))
                     )}
                 </div>
-                {loading ? "" : <ItemUpdates/>}
+                {loading ? "" : <Membership/>}
                 
             </>
         ) 
