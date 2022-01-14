@@ -4,6 +4,7 @@ import {Routes, Route} from "react-router-dom";
 import "./Components/Items/Item.scss";
 import "./Components/Extras/Extras.scss";
 import Cart from "./Components/Navbar/Cart";
+import"./Components/Navbar/Cart.scss";
 
 
 const Main = () => {

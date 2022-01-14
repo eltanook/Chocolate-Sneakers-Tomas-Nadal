@@ -1,5 +1,5 @@
 import { useState, useEffect} from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import ItemList from './ItemList';
 import ItemLoader from './ItemLoader';
 import Membership from '../Extras/Membership';

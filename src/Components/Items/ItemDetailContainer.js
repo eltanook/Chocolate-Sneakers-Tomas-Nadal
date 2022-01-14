@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
 import ItemLoader from './ItemLoader';
+import { UseCartContext } from '../Navbar/CartContext';
 
 
 const ItemDetailContainer = () => {
@@ -26,17 +27,19 @@ const ItemDetailContainer = () => {
 
     }, [id]);
 
-    const onAdd = (count) => {
-    setAdded(true);  
-    console.log(`Agregaste ${count} ${product.title} al carrito.`)
-    }
+    const { AddProduct } = UseCartContext();
+
+    const OnAdd = (quantity) => {
+        AddProduct(product, quantity);
+        setAdded(true)
+    };
 
     return (
         <>
             <p className="subtitle">Product details</p>
             
             <div id="projects">
-                {loading ? <ItemLoader/>  : <ItemDetail product={product} onAdd={onAdd} added={added}/>}
+                {loading ? <ItemLoader/>  : <ItemDetail product={product} OnAdd={OnAdd} added={added}/>}
             </div>
          </>
     ) 

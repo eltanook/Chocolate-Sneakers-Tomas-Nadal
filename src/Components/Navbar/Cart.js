@@ -1,22 +1,28 @@
-//import { useContext } from "react"
-//import {contexto} from './CartContext'
+import React from 'react'
+import { UseCartContext } from './CartContext'
+import CartItem from './CartItem'
 
+function Cart() {
+    const {CartList, EmptyCart} = UseCartContext();
 
-const Cart = () => {
+    if(CartList.length < 1){ 
+        return(<h3>You have no added products</h3>)
+    }else{ 
+    return(
+        <div id='cart'>
+        <p className="subtitle">Cart</p>
+  
+        {CartList.map((product) => (
+            <CartItem
+              key={product.product.id}
+              product={product.product}
+              quantity={product.quantity}
+            />))}
 
-    return (
-
-        <div>
-            <p className="subtitle">Cart</p>
-            <h3>Here are your selected products:</h3>
-
-            <ul id="productos-cart"> 
-                <li>Quantity: {/*quantity*/}</li>   
-                <li>Total price: {/*price*/}</li>
-            </ul>
+        <button id="empty-cart"className="btn btn-main" onClick={EmptyCart}>Empty cart</button>
         </div>
     )
 }
+}
 
 export default Cart
-

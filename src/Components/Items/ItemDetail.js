@@ -1,7 +1,7 @@
 import ItemCount from './ItemCount';
 
 
-function ItemDetail ({product, onAdd, added}) {
+function ItemDetail ({product, OnAdd, added}) {
 
     return (
         <div className= "itemBox2">
@@ -16,7 +16,7 @@ function ItemDetail ({product, onAdd, added}) {
                 <div id="contador">
                     {added ? 
                     <h3>Succesfully added to cart!</h3> : 
-                    <ItemCount stock ={5} initial={1} onAdd={onAdd}/>}
+                    <ItemCount stock ={5} initial={1} OnAdd={OnAdd}/>}
                 </div>
             </div>   
             
