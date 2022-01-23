@@ -1,4 +1,5 @@
 import {useState} from "react"
+import { Button } from 'react-bootstrap';
 
 
 const ItemCount = ({stock, initial, OnAdd}) => {
@@ -24,13 +25,13 @@ const ItemCount = ({stock, initial, OnAdd}) => {
     return (
         
         <div>
-            <button className="btn btn-main" onClick={disminuirQuantity}>-</button>
+            <Button onClick={disminuirQuantity}>-</Button>
 
             <p> {quantity} </p>
+            
+            <Button onClick={aumentarQuantity}>+</Button>
 
-            <button className="btn btn-main" onClick={aumentarQuantity}>+</button>
-
-            <button className="btn btn-main btn-submit" onClick={AddtoCart}>Add to cart</button>
+            <Button onClick={AddtoCart}>Add to cart</Button>
         </div>
     )
 }

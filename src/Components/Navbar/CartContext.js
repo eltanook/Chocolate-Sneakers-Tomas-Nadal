@@ -1,11 +1,11 @@
 import { useState, React, createContext, useContext } from "react";
 
 
-const CartContext = createContext([]);
-
+export const CartContext = createContext([]);
 export const UseCartContext = () => useContext(CartContext);
 
 const CartContextProvider = ({ children }) => {
+  
   const [CartList, SetCartList] = useState([]);
 
   const AddProduct = (product, quantity) => {
@@ -13,7 +13,6 @@ const CartContextProvider = ({ children }) => {
     const index = CartList.findIndex((i) => i.product.id === product.id);
 
     if (index > -1) {
-
       const oldQy = CartList[index].quantity;
 
       CartList.splice(index, 1);
@@ -30,7 +29,6 @@ const CartContextProvider = ({ children }) => {
     const products = CartList.filter((i) => i.product.id !== id);
     SetCartList(products);
   };
-
 
   const EmptyCart = () => {
     SetCartList([]);

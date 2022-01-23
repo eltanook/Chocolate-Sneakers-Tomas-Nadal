@@ -6,11 +6,11 @@ const ItemCategories = () => {
     return (
         <NavDropdown>         
                 <div id="selector-categorias">
-                    <NavDropdown.Item as='span'> <Link to={'/'}>All the categories</Link> </NavDropdown.Item>
-                    <NavDropdown.Item as='span'> <Link to={'/categoria/electronics'}>Electronics</Link> </NavDropdown.Item>
-                    <NavDropdown.Item as='span'> <Link to={'/categoria/jewelery'}>Jewelery</Link> </NavDropdown.Item>
-                    <NavDropdown.Item as='span'> <Link to={`/categoria/men's clothing`}>Men's clothing</Link> </NavDropdown.Item>
-                    <NavDropdown.Item as='span'> <Link to={`/categoria/women's clothing`}>Women's clothing</Link> </NavDropdown.Item> 
+                    <NavDropdown.Item as='span'> <Link to={'/'}>All</Link> </NavDropdown.Item>
+                    <NavDropdown.Item as='span'> <Link to={`/brand/Balenciaga`}>Balenciaga</Link> </NavDropdown.Item>
+                    <NavDropdown.Item as='span'> <Link to={'/brand/Vans'}>Vans</Link> </NavDropdown.Item>
+                    <NavDropdown.Item as='span'> <Link to={'/brand/Nike'}>Nike</Link> </NavDropdown.Item>
+                    <NavDropdown.Item as='span'> <Link to={`/brand/Adidas`}>Adidas</Link> </NavDropdown.Item>
                 </div>
         </NavDropdown>
     )

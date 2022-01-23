@@ -10,13 +10,13 @@ function ItemDetail ({product, OnAdd, added}) {
 
             <div>
                 <h2>{product.title}</h2>
-                <h3>►{product.category}◄</h3>
+                <h3>►{product.brand}◄</h3>
                 <p>{product.description}</p>
                 <h4>${product.price}</h4>
                 <div id="contador">
                     {added ? 
                     <h3>Succesfully added to cart!</h3> : 
-                    <ItemCount stock ={5} initial={1} OnAdd={OnAdd}/>}
+                    <ItemCount stock ={product.stock} initial={1} OnAdd={OnAdd}/>}
                 </div>
             </div>   
             

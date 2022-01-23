@@ -3,6 +3,9 @@ import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
 import ItemLoader from './ItemLoader';
 import { UseCartContext } from '../Navbar/CartContext';
+import { collection, doc, getDoc} from 'firebase/firestore';
+import { db } from '../../Firebase/firebase';
+
 
 
 const ItemDetailContainer = () => {
@@ -14,18 +17,20 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         
-        const getProducts = fetch (`https://fakestoreapi.com/products/${id}`);
+        const collectionProducts = collection(db, "products")
+        const docRef = doc(collectionProducts,id)
+        const pedido = getDoc(docRef)
 
-        getProducts
-        .then(res=>res.json())
-        .then((product) => {
-            setLoading(false);
-            setProducts(product);
-        }).catch((err)=> {
-            console.error(err)
-        });
-
-    }, [id]);
+        pedido
+        .then((resultado)=>{
+            const product = resultado.data()
+            setProducts(product)
+            setLoading(false)
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    },[id])
 
     const { AddProduct } = UseCartContext();
 

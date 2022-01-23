@@ -5,6 +5,9 @@ import ItemLoader from './ItemLoader';
 import Membership from '../Extras/Membership';
 import ItemCategories from './ItemCategories';
 import Carousel from '../Extras/Carousel';
+import { db } from '../../Firebase/firebase';
+import { collection, getDocs, query, where} from 'firebase/firestore';
+
 
 const ItemListContainer = () => {
 
@@ -15,19 +18,33 @@ const ItemListContainer = () => {
 
         useEffect(() => {
 
-            const url = id ? `https://fakestoreapi.com/products/category/${id}` : "https://fakestoreapi.com/products/";
-            const getCollection = fetch (url);
-
-            getCollection
-            .then(res=>res.json())
-            .then((products) => {
-                setLoading(false);
-                setProducts(products);
-            }).catch((err)=> {
-                console.error(err)
-            });
-
-        }, [id]);
+            if(id){
+                const collectionProducts = collection(db,"products")
+                const filter = where("brand","==",id)
+                const consulta = query(collectionProducts,filter)
+                const pedido = getDocs(consulta)
+                pedido
+                    .then((resultado)=>{
+                        setProducts(resultado.docs.map(doc=>({id : doc.id,...doc.data()})))
+                        setLoading(false) 
+                    })
+                    .catch((error)=>{
+                        console.log(error)
+                    })
+            }else {
+                const collectionProducts = collection(db,"products")
+                const pedido = getDocs(collectionProducts)
+                pedido
+                    .then((resultado)=>{
+                        setProducts(resultado.docs.map(doc=>({id : doc.id,...doc.data()})))
+                        setLoading(false) 
+                    })
+                    .catch((error)=>{
+                        console.log(error)
+                    })
+            }
+    
+        },[id])
 
         return (
             <>
@@ -38,7 +55,7 @@ const ItemListContainer = () => {
                 <Carousel/>
                 <h2 id='ourproducts'>      
                 <ItemCategories/>
-                Our products:
+                Our sneakers:
                 </h2>
                 </>}
                 
