@@ -1,5 +1,6 @@
 import {useState} from 'react'
-import { Button } from 'react-bootstrap';
+import { Button, ButtonGroup } from 'react-bootstrap';
+import { toast } from 'react-toastify';
 
 
 const ItemCount = ({stock, initial, OnAdd}) => {
@@ -19,14 +20,17 @@ const ItemCount = ({stock, initial, OnAdd}) => {
 
     const AddtoCart = () => {
         OnAdd(quantity);
+        toast.success('Succesfully added to cart!', {position: 'top-center', autoClose: 3000} )
     };
 
     return (
         <div id='contador'>
+            <ButtonGroup>
             <Button onClick={disminuirQuantity}>-</Button>
             <p>{quantity}</p>
             <Button onClick={aumentarQuantity}>+</Button>
             <Button onClick={AddtoCart}>Add to cart</Button>
+            </ButtonGroup>
         </div>
     )
 }

@@ -1,4 +1,11 @@
+import { toast } from 'react-toastify';
+
+
 const Membership = () => {
+    const welcomeToast = () => {
+        toast.success('Welcome to the Chocolate Club.', {position: 'top-center', autoClose: 3000} )
+    }
+
     return (    
     <section id='membership'>
     <div className='container'>
@@ -9,12 +16,12 @@ const Membership = () => {
             <div className='input-group'>
                 <form action='#' className='w-100'>
                     <input type='email' className='form-control' name='email' placeholder='Email Address Here...' required/>      
-                    <button className='btn btn-main btn-submit' type='submit' onClick={() =>{}}>Become a member</button>
+                    <button className='btn btn-main btn-submit' type='submit' onClick={welcomeToast}>Become a member</button>
                 </form>
             </div>
         </div>
     </div>
-    </div>
+    </div>    
     </section>  
     )
 }

@@ -5,6 +5,8 @@ import "./Components/Items/Item.scss";
 import "./Components/Extras/Extras.scss";
 import Cart from "./Components/Navbar/Cart";
 import"./Components/Navbar/Cart.scss";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 
 const Main = () => {
@@ -16,6 +18,7 @@ const Main = () => {
                 <Route path="/brand/:id" element={<ItemListContainer/>}/>
                 <Route path="/cart" element={<Cart/>}/>
             </Routes>
+            <ToastContainer/>
         </main>
     )
 }
