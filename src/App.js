@@ -5,15 +5,15 @@ import Main from './Main';
 import CartContextProvider from './Components/Navbar/CartContext';
 
 
-function App (title) {
+function App () {
     
     return (
         <CartContextProvider>
-        <BrowserRouter>  
-                <Header title={title}/>
+            <BrowserRouter>  
+                <Header/>
                 <Main/>
                 <Footer/>
-        </BrowserRouter>  
+            </BrowserRouter>  
         </CartContextProvider>
     )  
 }

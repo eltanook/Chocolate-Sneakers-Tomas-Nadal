@@ -1,12 +1,5 @@
 #cart{
-    display: block;
-    justify-content: center;
     text-align: center;
-}
-
-#cart-item{
-    border-bottom: 2px solid rgb(120, 80, 45);
-    border-top: 2px solid rgb(120, 80, 45);
 }
 
 #cart-item-title{
@@ -17,24 +10,13 @@
 }
 
 #no-added-products{
-    padding: 30vh;
+    padding: 20vh 30vh 30vh 30vh;
 }
 
-#empty-cart{
+#empty-cart, #confirm-purchase{
     padding: 0px 14px 0px 14px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    height: 40px;    
-    background-color: rgb(120, 80, 45);
-    color: rgb(255, 247, 234);
-    font-weight: bold;
-    border: none;
-}
-
-#confirm-purchase{
-    padding: 0px 14px 0px 14px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
     height: 40px;    
     background-color: rgb(120, 80, 45);
     color: rgb(255, 247, 234);

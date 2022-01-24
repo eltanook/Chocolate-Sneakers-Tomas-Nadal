@@ -6,19 +6,14 @@
 }
 
 html , body {
-    height: 100vh;
     background-color: rgb(180, 160, 140);
 }
-
-  
  
 .header{
-    padding: 1rem;
+    padding: 0.7rem 8rem 0.7rem 8rem;
     background-color: rgb(110, 70, 40);
     display: flex;
-    align-items: auto; 
-	justify-content: space-around;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+	justify-content: space-between;
 }
 
 #brand{
@@ -31,8 +26,6 @@ html , body {
 #navbar a{
     text-decoration: none;
     color: rgb(255, 247, 234);
-    padding: 10px;
-    position: relative;
     display: inline-flex;   
 }
 
@@ -40,49 +33,37 @@ html , body {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 
 #ourproducts a{
     color: rgb(110, 70, 40);
     text-decoration: none;
     margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #registrarse{
-    text-decoration: none;
     background-color: rgb(255, 247, 234);
     border-radius: 5px 5px 5px 5px;
     color: rgb(110, 70, 40);
-    margin-left: 15px;
+    margin-left: 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    display: flex;
-    align-items: center;
     padding: 7px; 
 } 
 
 .subtitle{
-    padding: 5px;
+    padding: 4px;
     background-color: rgb(120, 80, 45);
     color: rgb(255, 247, 234);
     display: flex;
-    align-items: auto; 
 	justify-content: space-around;
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     margin-bottom: 50px;
 }
 
-h1{
-    text-decoration: none;
-    color: rgb(255, 247, 234);
-    padding: 5px 10px;
-    position: relative;
-    display: inline-flex;
-    cursor: default;
-}
-
 h2{
-    width: 100%;
     color: rgb(110, 70, 40);
     text-align: center;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
@@ -95,29 +76,15 @@ h3{
     text-align: center;
 }
 
-#loader{
-    color: rgb(110, 70, 40);
-    display: flex;
-    align-items: center; 
-	justify-content: center;
-    flex-wrap: wrap;
-    margin: auto;
-    height: 70vh;
-}
-
 .main-footer {
     text-align: center;
     color: rgb(255, 247, 234);
     background-color: rgb(110, 70, 40);
     border-top: 15px solid rgb(120, 80, 45);
     padding-top: 2em;
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }
 
 #copyright{
-    width: 100%;
     justify-content: center;
     display: flex;
 }

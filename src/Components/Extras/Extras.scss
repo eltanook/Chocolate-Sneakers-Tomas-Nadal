@@ -1,4 +1,10 @@
-
+#loader{
+    color: rgb(110, 70, 40);
+    display: flex;
+    align-items: center; 
+    margin: auto;
+    height: 60vh;
+}
 
 #membership{
     background-image: url(https://i.pinimg.com/736x/32/ee/6a/32ee6a9ed4edec8c63cfb5ebc69ac154.jpg);
@@ -13,25 +19,16 @@
     border-top: 15px solid rgb(120, 80, 45);
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     padding-bottom: 4rem;
+    text-align: center;
 }
 
-#membership h2{
-    width: 100%;
+#membership h2, #membership p{
     color: rgb(255, 247, 234);
-    text-align: center;
-    text-shadow: 2px 2px 3px rgb(0, 0, 0);
-}
-
-#membership p{
-    width: 100%;
-    color: rgb(255, 247, 234);
-    text-align: center;
     text-shadow: 2px 2px 3px rgb(0, 0, 0);
 }
 
 .input-group {
     margin-top: 40px;
-    position: relative;
 }
   
 .input-group .btn-submit {
@@ -49,25 +46,22 @@
     display: table-cell;
 }
 
+#carousel{
+    box-shadow: 0 0px 15px rgba(0,0,0,0.3);
+    margin-top: 5rem;
+}
+
 #slide {
-    height: 450px;
-    align-items: center;
-    justify-content: center;
-    width: 100%;   
+    height: 470px;
 }
 
 .carousel-inner img{
     height: fit-content;
-    width: 98.8vw;
+    width: 100%;
     min-height: 100%;
 }
 
 .carousel-inner h3{
     color: rgb(255, 247, 234);
     text-shadow: 2px 2px 3px rgb(0, 0, 0);
-}
-
-#carousel{
-    box-shadow: 0 0px 15px rgba(0,0,0,0.3);
-    margin-top: 5rem;
 }
