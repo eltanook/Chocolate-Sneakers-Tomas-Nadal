@@ -46,6 +46,7 @@ html , body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     padding: 7px; 
     border: none;
+    margin-left: 10px;
 } 
 
 .subtitle{
@@ -72,7 +73,7 @@ h3{
 }
 
 .main-footer {  
-    text-overflow: "";
+    text-overflow: '';
     text-align: center;
     color: rgb(255, 247, 234);
     background-color: rgb(110, 70, 40);

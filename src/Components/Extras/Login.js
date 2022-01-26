@@ -14,7 +14,7 @@ const Login = () => {
 
     return (
       <>
-        <Button id='registrarse' onClick={handleShow}>Your details</Button>
+        <Button id='registrarse' onClick={handleShow}>Become a member</Button>
         <Modal show={show} onHide={handleClose}>
           <div id='login'>
             <Modal.Header>
@@ -28,14 +28,14 @@ const Login = () => {
               Write your address
               <input type='text' className='form-control' name='adress' placeholder='Adress Here...' required/>
               Write your phone number
-              <input type='number' className='form-control' name='phone' placeholder='Phone Number Address Here...' required/>
+              <input type='tel' className='form-control' name='phone' placeholder='Phone Number Here...' required/>
             </Modal.Body>
             <Modal.Footer>
               <Button id='close-save' onClick={handleClose}>
                 Close
               </Button>
               <Button id='close-save' onClick={handleCloseSubmit}>
-                Save Changes
+                Become a member
               </Button>
             </Modal.Footer>
           </div>

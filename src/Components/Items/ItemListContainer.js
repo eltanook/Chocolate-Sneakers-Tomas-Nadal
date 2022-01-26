@@ -42,7 +42,7 @@ const ItemListContainer = () => {
         {loading ? '' : <> <Carousel/><h2 id='ourproducts'> <ItemCategories/>Our sneakers:</h2> </>}
         <div id='projects'>
         {loading ? <ItemLoader/> : 
-            (products.map((product) => (<ItemList key={products.id} product={product}/>)))}
+            (products.map((product, id) => (<ItemList key={product.id} product={product}/>)))}
         </div>
         {loading ? '' : <Membership/>}
         </>

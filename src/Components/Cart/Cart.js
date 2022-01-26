@@ -1,8 +1,9 @@
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import React, { useState } from 'react'
-import { Button } from 'react-bootstrap';
+import { Button, ButtonGroup } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import { db } from '../../Firebase/firebase';
+import Purchase from '../Extras/Purchase';
 import { UseCartContext } from './CartContext'
 import CartItem from './CartItem'
 
@@ -43,7 +44,10 @@ function Cart() {
             ))}
             <p id='totalprice'>Total Price: ${PriceTotal()}</p>
             <Button id='empty-confirm' onClick={EmptyCart}>Empty cart</Button>{' '}
-            <Button id='empty-confirm' onClick={createOrder}>Confirm purchase</Button>
+            <ButtonGroup>
+                <Purchase/>
+                <Button id='empty-confirm' onClick={createOrder}>Confirm purchase</Button>
+            </ButtonGroup>
         </div>
         )
     }   
