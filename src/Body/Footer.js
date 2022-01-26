@@ -2,7 +2,7 @@ const Footer = () => {
     return (
         <div className="main-footer">
             <div className="container">
-                <div className="row">
+                <div className="row" id="footer-info">
 
                     <div className="col">
                         <a id="brand" href="/#"><h4>Chocolate Sneakers</h4></a>
@@ -33,8 +33,8 @@ const Footer = () => {
 
                 </div>
                 <hr />
-                <div className="row">
-                    <p id="copyright">&copy;{new Date().getFullYear()} Tomás Nadal | All rights reserved</p>
+                <div className="row" id="copyright">
+                    <p>&copy;{new Date().getFullYear()} Tomás Nadal | All rights reserved</p>
                 </div>
             </div>
         </div>

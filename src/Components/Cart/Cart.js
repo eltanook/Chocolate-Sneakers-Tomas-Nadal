@@ -8,7 +8,7 @@ import CartItem from './CartItem'
 
 
 function Cart() {
-    const {CartList, EmptyCart} = UseCartContext();
+    const {CartList, EmptyCart, PriceTotal} = UseCartContext();
     const [order, setOrder] = useState(false)
     const createOrder = () => {
         const collectionProducts = collection(db,'orders')
@@ -22,14 +22,14 @@ function Cart() {
             EmptyCart()
         })
         .catch((error)=>{
-            console.log(error)
+            toast.warn(error, {position: 'top-center', autoClose: 3000} )
         })
     }
     
     if (CartList.length < 1){ 
         return(    
-        <>    
-        <p className='subtitle'>Cart</p>
+        <>   
+        <p className='subtitle'>Cart</p> 
         <h3 id='no-added-products'>You have no added sneakers.</h3>
         </>
         )
@@ -41,8 +41,9 @@ function Cart() {
             {CartList.map ((product) => (
                 <CartItem key={product.product.id} product={product.product} quantity={product.quantity}/>
             ))}
-            <Button id='empty-cart' onClick={EmptyCart}>Empty cart</Button>{' '}
-            <Button id='confirm-purchase' onClick={createOrder}>Confirm purchase</Button>
+            <p id='totalprice'>Total Price: ${PriceTotal()}</p>
+            <Button id='empty-confirm' onClick={EmptyCart}>Empty cart</Button>{' '}
+            <Button id='empty-confirm' onClick={createOrder}>Confirm purchase</Button>
         </div>
         )
     }   

@@ -1,10 +1,10 @@
-import ItemDetailContainer from "./Components/Items/ItemDetailContainer"
-import ItemListContainer from "./Components/Items/ItemListContainer"
+import ItemDetailContainer from "../Components/Items/ItemDetailContainer"
+import ItemListContainer from "../Components/Items/ItemListContainer"
 import {Routes, Route} from "react-router-dom";
-import "./Components/Items/Item.scss";
-import "./Components/Extras/Extras.scss";
-import Cart from "./Components/Navbar/Cart";
-import"./Components/Navbar/Cart.scss";
+import "../Components/Items/Item.scss";
+import "../Components/Extras/Extras.scss";
+import Cart from "../Components/Cart/Cart";
+import"../Components/Cart/Cart.scss";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 

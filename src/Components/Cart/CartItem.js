@@ -13,7 +13,7 @@ function CartItem({product, quantity}) {
             <Row>
                 <Col id='cart-item-title'> {title} </Col>
                 <Col> Quantity: {quantity} </Col>
-                <Col> ${price} </Col>
+                <Col> ${price*quantity}</Col>
                 <Col> <Button id='delete' onClick={() =>DelProduct(id) }>Delete</Button> </Col>
             </Row>
         </Container>

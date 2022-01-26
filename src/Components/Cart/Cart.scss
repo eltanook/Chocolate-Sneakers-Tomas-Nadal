@@ -10,12 +10,12 @@
 }
 
 #no-added-products{
-    padding: 20vh 30vh 30vh 30vh;
+    padding: 20vh 0 30vh 0;
+    width: 100%;
 }
 
-#empty-cart, #confirm-purchase{
+#empty-confirm{
     padding: 0px 14px 0px 14px;
-    margin-top: 4rem;
     margin-bottom: 4rem;
     height: 40px;    
     background-color: rgb(120, 80, 45);
@@ -29,4 +29,9 @@
     background-color: rgb(120, 80, 45);
     color: rgb(255, 247, 234);
     font-weight: bold;
+}
+
+#totalprice{
+    width: 100%;  
+    margin-top: 4rem;
 }

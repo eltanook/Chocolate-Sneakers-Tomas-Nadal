@@ -3,8 +3,22 @@
     display: flex;
     align-items: center; 
     margin: auto;
-    height: 60vh;
+    padding: 9rem;
 }
+
+#login{
+    color: rgb(120, 80, 45);
+}
+
+#close-save{
+    padding: 0px 14px 0px 14px;
+    height: 40px;    
+    background-color: rgb(120, 80, 45);
+    color: rgb(255, 247, 234);
+    font-weight: bold;
+    border: none;
+}
+
 
 #membership{
     background-image: url(https://i.pinimg.com/736x/32/ee/6a/32ee6a9ed4edec8c63cfb5ebc69ac154.jpg);

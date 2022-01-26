@@ -26,16 +26,16 @@ const CartContextProvider = ({ children }) => {
     SetCartList([]);
   };
 
-//  const contadorProductos = () => {
-//    return CartList.reduce((accum, product) => accum = accum + product.quantity, 0)
-//  }
-//
-//  const precioTotal = () => {
-//    return CartList.reduce((accum, el) => accum = accum + (el.product.price*el.quantity), 0)
-//  }
+  const IconCart = () => {
+    return CartList.reduce((acum, i)=> acum + i.quantity, 0);
+  }
+
+  const PriceTotal = () => {
+    return CartList.reduce((acum, i)=> acum + i.quantity * i.product.price, 0);
+  }
 
   return (
-    <CartContext.Provider value={{ CartList, AddProduct, EmptyCart, DelProduct}}>
+    <CartContext.Provider value={{ CartList, AddProduct, EmptyCart, DelProduct, IconCart, PriceTotal}}>
       {children}
     </CartContext.Provider>
   );

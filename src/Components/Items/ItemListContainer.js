@@ -7,6 +7,7 @@ import ItemCategories from './ItemCategories';
 import Carousel from '../Extras/Carousel';
 import { db } from '../../Firebase/firebase';
 import { collection, getDocs, query, where} from 'firebase/firestore';
+import { toast } from 'react-toastify';
 
 
 const ItemListContainer = () => {
@@ -15,32 +16,24 @@ const ItemListContainer = () => {
     const {id} = useParams()
 
     useEffect(() => {
+        const collectionProducts = collection(db,'products')
+        let order
         if (id){
-            const collectionProducts = collection(db,'products')
             const filter = where('brand','==',id)
             const consulta = query(collectionProducts,filter)
-            const order = getDocs(consulta) 
-            order
-            .then((resultado)=>{
-                setProducts(resultado.docs.map(doc => ({id : doc.id,...doc.data()}) ))
-                setLoading(false) 
-            })
-            .catch((error)=>{
-                console.log(error)
-            })
+            order = getDocs(consulta) 
         }
         else{
-            const collectionProducts = collection(db,'products')
-            const order = getDocs(collectionProducts)
-            order
-            .then((resultado)=>{
-                setProducts(resultado.docs.map(doc => ({id : doc.id,...doc.data()}) ))
-                setLoading(false) 
-            })
-            .catch((error)=>{
-                console.log(error)
-            })
+            order = getDocs(collectionProducts)
         }
+        order
+        .then((resultado)=>{
+            setProducts(resultado.docs.map(doc => ({id : doc.id,...doc.data()}) ))
+            setLoading(false) 
+        })
+        .catch((error)=>{
+            toast.warn(error, {position: 'top-center', autoClose: 3000} )
+        })
     }, [id])
 
     return (

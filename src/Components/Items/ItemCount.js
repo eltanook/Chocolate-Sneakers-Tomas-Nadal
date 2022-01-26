@@ -26,10 +26,10 @@ const ItemCount = ({stock, initial, OnAdd}) => {
     return (
         <div id='contador'>
             <ButtonGroup>
-            <Button onClick={disminuirQuantity}>-</Button>
-            <p>{quantity}</p>
-            <Button onClick={aumentarQuantity}>+</Button>
-            <Button onClick={AddtoCart}>Add to cart</Button>
+                <Button onClick={disminuirQuantity}>-</Button>
+                <p>{quantity}</p>
+                <Button onClick={aumentarQuantity}>+</Button>
+                <Button onClick={AddtoCart}>Add to cart</Button>
             </ButtonGroup>
         </div>
     )

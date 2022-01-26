@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
 import ItemLoader from '../Extras/Loader';
-import { UseCartContext } from '../Navbar/CartContext';
+import { UseCartContext } from '../Cart/CartContext';
 import { collection, doc, getDoc} from 'firebase/firestore';
 import { db } from '../../Firebase/firebase';
+import { toast } from 'react-toastify';
 
 
 const ItemDetailContainer = () => {
@@ -24,7 +25,7 @@ const ItemDetailContainer = () => {
             setLoading(false)
         })
         .catch((error)=>{
-            console.log(error)
+            toast.warn(error, {position: 'top-center', autoClose: 3000} )
         })
     }, [id])
 
